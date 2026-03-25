@@ -9,14 +9,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
-    - name: Setup kubectl
-      uses: azure/setup-kubectl@v3
+    - uses: hashicorp/setup-terraform@v4
 
-    - name: Setup Terraform
-      uses: hashicorp/setup-terraform@v3
+    - uses: azure/setup-kubectl@v4
 
     - name: Configure kubeconfig
       run: |
@@ -24,11 +21,7 @@ jobs:
         export KUBECONFIG=$PWD/kubeconfig
 
     - name: Terraform Init
-      run: |
-        cd terraform
-        terraform init
+      run: terraform init
 
     - name: Terraform Apply
-      run: |
-        cd terraform
-        terraform apply -auto-approve
+      run: terraform apply -auto-approve

@@ -1,3 +1,32 @@
 template
 build
 .secrets
+
+# Node dependencies
+node_modules/
+
+# OpenFaaS build artifacts
+build/
+
+# Terraform local state and cache
+**/.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Environment and secrets
+.env
+.env.*
+*.tfvars
+*.tfvars.json
+
+# Editor/OS files
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
