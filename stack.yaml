@@ -1,0 +1,10 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8080
+functions:
+  hello-fn:
+    lang: node18
+    handler: ./hello-fn
+    image: adnan23bcs35/hello-fn:latest
+
