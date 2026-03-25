@@ -25,6 +25,6 @@ jobs:
       working-directory: ./terraform
       run: terraform init
 
-    - name: Terraform Apply
+    - name: Terraform Plan
       working-directory: ./terraform
-      run: terraform apply -auto-approve
+      run: terraform plan
